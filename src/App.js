@@ -1,7 +1,12 @@
 import React,{useEffect, useState} from 'react';
 import './App.css'
-import SearchIcon from './search.svg'
+import SearchIcon from './search.svg';
 import MovieCard from './MovieCard';
+import Button from './components/button';
+import Admin from './components/Admin';
+import LoginForm from './components/LoginForm';
+import ProductList from './components/ProductList';
+import Counter from './components/Counter';
 
 const API_URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=46e960cb';
 const App = ()=>{
@@ -12,9 +17,9 @@ const App = ()=>{
         const data = await response.json();
         setMovies(data.Search);
     }
-
+    const isLogedin = false;
     useEffect(()=>{
-        searchMovies('Spiderman')
+        // searchMovies('')Spiderman
     },[]);
 
     return(
@@ -36,6 +41,13 @@ const App = ()=>{
                     </div>
                 )
             }
+            <Counter />
+            {/* <Button /> */}
+            {/* {isLogedin?(<Admin />):(<LoginForm />)} */}
+            {/* <ProductList /> */}
+            
+            
+
         </div> 
     ) 
 }
