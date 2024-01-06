@@ -8,6 +8,7 @@ const Counter = () => {
   }
  
   function reducebyTwo(){
+    if(count>0)
     setCount(count-2);
   }
   return (
